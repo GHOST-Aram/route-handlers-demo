@@ -1,5 +1,14 @@
-export const GET = async() =>{
-    return Response.json("Profile api")
+import { NextRequest } from "next/server"
+
+export const GET = async(request: NextRequest) =>{
+    const query = request.nextUrl.searchParams.get("query")
+
+
+    const response =  Response.json({
+        name: query ? query : "Jane Doe"
+    })
+
+    return response
 }
 
 export const POST = async(request: Request) =>{
