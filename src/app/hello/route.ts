@@ -1,3 +1,5 @@
+import { redirect } from "next/navigation"
+
 export const GET = async() =>{
-    return new Response("Hello world")
+    redirect('/dashboard/users')
 }
